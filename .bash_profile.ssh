@@ -1,0 +1,30 @@
+SSH_ENV="$HOME/.ssh/environment"
+
+function start_agent {
+ # Make sure this isn't a scp/sftp connection
+ if [ ${TERM} != "dumb" ]; then
+  echo "Initialising new SSH agent..."
+ fi
+ /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+ if [ ${TERM} != "dumb" ]; then
+  echo succeeded
+ fi
+ chmod 600 "${SSH_ENV}"
+ . "${SSH_ENV}" > /dev/null
+ for key in $HOME/.ssh/*rsa
+ do
+  /usr/bin/ssh-add $key
+ done
+}
+
+# Source SSH settings, if applicable
+
+if [ -f "${SSH_ENV}" ]; then
+ . "${SSH_ENV}" > /dev/null
+ #ps ${SSH_AGENT_PID} doesn't work under cywgin
+ ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+  start_agent;
+ }
+else
+ start_agent;
+fi
