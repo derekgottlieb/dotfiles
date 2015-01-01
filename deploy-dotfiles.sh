@@ -7,6 +7,7 @@ fi
 
 FILES_TO_SYMLINK=".bashrc 
 .bash_profile 
+.profile
 .gitignore_global 
 .hgignore_global 
 .screenrc
