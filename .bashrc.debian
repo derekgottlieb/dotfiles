@@ -2,6 +2,8 @@ if [[ -f /etc/debian_version ]]; then
   # But I like sbin...
   export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
 
+  alias dev="cd ~/dev"
+
   if [[ -e /sbin/zfs ]]; then
     alias zfs="sudo /sbin/zfs"
     alias zpool="sudo /sbin/zpool"
