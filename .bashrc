@@ -10,12 +10,6 @@ export EDITOR=vim
 # Fix for Mac keyboard map
 export XKL_XMODMAP_DISABLE=1
 
-if [[ -d $HOME/.rvm ]]; then
-  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-fi
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 for p in $HOME/.bashrc.*
 do
   source "$p"
