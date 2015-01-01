@@ -1,5 +1,7 @@
 SSH_ENV="$HOME/.ssh/environment"
 
+alias forget="ssh-keygen -f "$HOME/.ssh/known_hosts" -R "
+
 function start_agent {
  # Make sure this isn't a scp/sftp connection
  if [ ${TERM} != "dumb" ]; then
