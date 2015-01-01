@@ -21,3 +21,18 @@ git clone git://github.com/tpope/vim-rails.git
 cd ~/.vim/bundle && \
 git clone git://github.com/tpope/vim-bundler.git
 
+## endwise (helps to end certain structures automatically like adding end following an if in ruby)
+cd ~/.vim/bundle && \
+git clone git://github.com/tpope/vim-endwise.git
+
+## projectionist
+cd ~/.vim/bundle && \
+git clone git://github.com/tpope/vim-projectionist.git
+
+## rake (requires projectionist)
+cd ~/.vim/bundle && \
+git clone git://github.com/tpope/vim-rake.git
+
+## commentary (easily comment/uncomment code blocks)
+cd ~/.vim/bundle && \
+git clone git://github.com/tpope/vim-commentary.git
