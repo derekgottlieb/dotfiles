@@ -10,9 +10,18 @@ export EDITOR=vim
 # Fix for Mac keyboard map
 export XKL_XMODMAP_DISABLE=1
 
-for p in ~/.bashrc.* ~/.dotfiles/.bashrc.*
-do
-  source "$p"
-done
+if [[ -f ~/.bashrc.* ]]; then
+  for p in ~/.bashrc.* 
+  do
+    source "$p"
+  done
+fi
+
+if [[ -f ~/.dotfiles/.bashrc.* ]]; then
+  for p in ~/.dotfiles/.bashrc.*
+  do
+    source "$p"
+  done
+fi
 
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
