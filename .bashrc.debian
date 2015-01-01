@@ -2,6 +2,15 @@ if [[ -f /etc/debian_version ]]; then
   # But I like sbin...
   export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
 
+  if [[ -e /sbin/zfs ]]; then
+    alias zfs="sudo /sbin/zfs"
+    alias zpool="sudo /sbin/zpool"
+  fi
+
+  if [[ -e /usr/bin/virsh ]]; then
+    alias virsh="/usr/bin/virsh -c qemu:///system"
+  fi
+
   # enable programmable completion features (you don't need to enable
   # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
   # sources /etc/bash.bashrc).
