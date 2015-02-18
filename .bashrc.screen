@@ -1,0 +1,7 @@
+# For interactive terminals, display screen sessions if any found
+if [[ $TERM != "dumb" ]]; then
+  if [[ -x $(which screen) ]]; then
+    screen -q -ls
+    [[ $? -ge 10 ]] && screen -ls | grep -E "screens|Detached|Attached"
+  fi
+fi
