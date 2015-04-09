@@ -14,3 +14,8 @@ if [[ $(uname -s) == "Darwin" ]]; then
   fi
 fi
 
+if [ -d ~/.nvm ]; then
+  # nvm for node.js
+  export NVM_DIR=~/.nvm
+  source $(brew --prefix nvm)/nvm.sh
+fi
