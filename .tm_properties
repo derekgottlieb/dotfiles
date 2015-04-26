@@ -1,0 +1,4 @@
+# Default editing configuration
+tabSize = 2
+softTabs = true
+softWrap = true

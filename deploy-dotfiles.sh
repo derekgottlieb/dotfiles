@@ -11,6 +11,7 @@ FILES_TO_SYMLINK=".bashrc
 .gitignore_global 
 .hgignore_global 
 .screenrc
+.tm_properties
 .tmux.conf
 .vimrc"
 
