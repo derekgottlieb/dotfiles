@@ -12,7 +12,8 @@ export XKL_XMODMAP_DISABLE=1
 
 for p in ~/.dotfiles/.bashrc.*
 do
-  source "$p"
+  [[ ! $p =~ .*.swp$ ]] && source "$p"
 done
 
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
+[[ -f ~/.bashrc.local ]] && source ~/.bashrc.local

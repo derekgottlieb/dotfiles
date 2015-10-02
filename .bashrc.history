@@ -1,0 +1,30 @@
+export HISTSTARTDATE=`date +%F_%H%M`
+this_tty=`tty | sed -e 's/\/dev\///'`
+
+export LASTDATE=`date +"%a %b %e %H:%M"`
+
+export HISTFILE=~/.bash_history.per-session/$HISTSTARTDATE.$this_tty
+
+ISCONSOLE=$(echo $this_tty | grep -c tty)
+if [ "$ISCONSOLE" -eq 0 ]; then
+  this_tty=`basename $this_tty`
+  # last output -
+  # root     pts/0        nyx.asc.edu      Wed Feb  9 09:13   still logged in
+  export REMOTEHOST=`/usr/bin/last | grep $USER | grep "pts/$this_tty" | grep "$LASTDATE" | head -n 1 | awk '{print $3}'`
+  export HISTFILE=~/.bash_history.per-session/$HISTSTARTDATE.$this_tty.$REMOTEHOST
+fi
+
+export HISTTIMEFORMAT="%F %T "
+
+mkdir -p ~/.bash_history.per-session
+
+function h () {
+  grep "$@" ~/.bash_history.per-session/*
+}
+
+# Save bash history
+#date >> $HOME/commandhistory
+#cat $HOME/.bash_history >> $HOME/commandhistory
+
+# clear out .bash_history
+#echo ""> $HOME/.bash_history
