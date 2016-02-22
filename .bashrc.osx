@@ -20,4 +20,4 @@ if [ -d ~/.nvm ]; then
   source $(brew --prefix nvm)/nvm.sh
 fi
 
-[[ -f "$HOME/.iterm2_shell_integration.bash" ]] && source "$HOME/.iterm2_shell_integration.bash"
+[[ -f "$HOME/.dotfiles/.iterm2_shell_integration.bash" ]] && source "$HOME/.dotfiles/.iterm2_shell_integration.bash"
