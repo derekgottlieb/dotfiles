@@ -1,13 +1,14 @@
 if [[ $(uname -s) == "Darwin" ]]; then
   alias ssh="LANG=en_US.UTF-8 /usr/bin/ssh -Y"
   alias dev="cd ~/Documents/dev"
+  alias top="/usr/bin/top -o cpu"
 
   alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
   alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
   [[ -f /usr/local/opt/modules/Modules/init/bash ]] && source /usr/local/opt/modules/Modules/init/bash
 
-  if [[ -f /usr/local/bin/brew ]]; then
+  if [[ $TERM != "dumb" ]] && [[ -f /usr/local/bin/brew ]]; then
     source `brew --repository`/Library/Contributions/brew_bash_completion.sh
 
     [[ -f ~/.brew-growl ]] && source ~/.brew-growl
