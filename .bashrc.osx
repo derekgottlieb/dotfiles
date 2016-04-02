@@ -13,12 +13,12 @@ if [[ $(uname -s) == "Darwin" ]]; then
 
     [[ -f ~/.brew-growl ]] && source ~/.brew-growl
   fi
+  if [ -d ~/.nvm ]; then
+    # nvm for node.js
+    export NVM_DIR=~/.nvm
+    source $(brew --prefix nvm)/nvm.sh
+  fi
+
+  [[ -f "$HOME/.dotfiles/.iterm2_shell_integration.bash" ]] && source "$HOME/.dotfiles/.iterm2_shell_integration.bash"
 fi
 
-if [ -d ~/.nvm ]; then
-  # nvm for node.js
-  export NVM_DIR=~/.nvm
-  source $(brew --prefix nvm)/nvm.sh
-fi
-
-[[ -f "$HOME/.dotfiles/.iterm2_shell_integration.bash" ]] && source "$HOME/.dotfiles/.iterm2_shell_integration.bash"
