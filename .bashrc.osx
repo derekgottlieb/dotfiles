@@ -8,7 +8,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
   [[ -f /usr/local/opt/modules/Modules/init/bash ]] && source /usr/local/opt/modules/Modules/init/bash
 
   if [[ -f /usr/local/bin/brew ]]; then
-    source `brew --repository`/Library/Contributions/brew_bash_completion.sh
+    [[ -f `brew --repository`/Library/Contributions/brew_bash_completion.sh ]] && source `brew --repository`/Library/Contributions/brew_bash_completion.sh
 
     [[ -f ~/.brew-growl ]] && source ~/.brew-growl
   fi
