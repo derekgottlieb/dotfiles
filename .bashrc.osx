@@ -8,6 +8,12 @@ if [[ $(uname -s) == "Darwin" ]]; then
 
   if [[ -f /usr/local/bin/brew ]]; then
     [[ -f `brew --repository`/Library/Contributions/brew_bash_completion.sh ]] && source `brew --repository`/Library/Contributions/brew_bash_completion.sh
+
+    # See https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md#opting-out
+    export HOMEBREW_NO_ANALYTICS=1
+    # May also run:
+    # git config --file="$(brew --repository)/.git/config" --replace-all homebrew.analyticsdisabled true
+
     [[ -f ~/.brew-growl ]] && source ~/.brew-growl
     if [ -d ~/.nvm ]; then
       # nvm for node.js
