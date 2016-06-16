@@ -66,6 +66,9 @@ filetype indent on
 "turn on syntax highlighting
 syntax on
 
+" Try out the colorscheme from https://github.com/fxn/vim-monochrome
+colorscheme monochrome
+
 "some stuff to get the mouse going in term
 "set mouse=a
 "set ttymouse=xterm2

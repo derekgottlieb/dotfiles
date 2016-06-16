@@ -36,3 +36,7 @@ git clone git://github.com/tpope/vim-rake.git
 ## commentary (easily comment/uncomment code blocks)
 cd ~/.vim/bundle && \
 git clone git://github.com/tpope/vim-commentary.git
+
+## vim-monochrome (colorscheme)
+cd ~/.vim/bundle && \
+git clone https://github.com/fxn/vim-monochrome.git
