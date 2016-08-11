@@ -5,6 +5,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
 
   alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
   alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+  alias plaintextedit='defaults write com.apple.TextEdit RichText -int 0'
 
   if [[ -f /usr/local/bin/brew ]]; then
     [[ -f `brew --repository`/Library/Contributions/brew_bash_completion.sh ]] && source `brew --repository`/Library/Contributions/brew_bash_completion.sh
