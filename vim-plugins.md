@@ -40,3 +40,19 @@ git clone git://github.com/tpope/vim-commentary.git
 ## vim-monochrome (colorscheme)
 cd ~/.vim/bundle && \
 git clone https://github.com/fxn/vim-monochrome.git
+
+## nerdtree (tree file explorer)
+cd ~/.vim/bundle && \
+git clone https://github.com/scrooloose/nerdtree.git
+
+## supertab (code completion)
+cd ~/.vim/bundle && \
+git clone https://github.com/ervandew/supertab.git
+
+## airline (status bar)
+cd ~/.vim/bundle && \
+git clone https://github.com/vim-airline/vim-airline.git
+
+## tcomment (quick comment/uncomment)
+cd ~/.vim/bundle && \
+git clone https://github.com/tomtom/tcomment_vim.git
