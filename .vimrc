@@ -137,6 +137,9 @@ set laststatus=2
 "recalculate the trailing whitespace warning when idle, and after saving
 autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
 
+"enable spellcheck when editing git commit messages
+autocmd FileType gitcommit setlocal spell
+
 "return '[\s]' if trailing white space is detected
 "return '' otherwise
 function! StatuslineTrailingSpaceWarning()
@@ -312,3 +315,6 @@ autocmd BufReadPost fugitive://*
   \   nnoremap <buffer> .. :edit %:h<CR> |
   \ endif
 
+" https://github.com/editorconfig/editorconfig-vim
+let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
