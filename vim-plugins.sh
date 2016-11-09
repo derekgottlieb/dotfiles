@@ -1,4 +1,6 @@
-# vim plugin install notes
+#!/bin/bash
+
+# vim plugin install/update script
 
 ## pathogen (plugin manager)
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
@@ -78,6 +80,7 @@ git clone https://github.com/tomtom/tcomment_vim.git
 
 ## editorconfig
 cd ~/.vim/bundle && \
+[[ ! -d editorconfig-vim ]] && \
 git clone https://github.com/editorconfig/editorconfig-vim.git
 
 ## update all
