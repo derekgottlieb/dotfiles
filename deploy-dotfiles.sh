@@ -27,3 +27,7 @@ do
   fi
   ln -s ~/.dotfiles/$thisfile ~/$thisfile
 done
+
+[[ ! -d ~/.liquidprompt ]] && git clone https://github.com/nojhan/liquidprompt.git ~/.liquidprompt
+cd ~/.liquidprompt && git pull
+
