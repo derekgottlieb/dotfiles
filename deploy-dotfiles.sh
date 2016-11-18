@@ -32,3 +32,6 @@ done
 cd ~/.liquidprompt && git pull
 ln -fs ~/.dotfiles/liquidpromptrc ~/.config/liquidpromptrc
 
+[[ ! -d ~/.z.git ]] && git clone https://github.com/rupa/z.git ~/.z.git
+cd ~/.z.git && git pull
+
