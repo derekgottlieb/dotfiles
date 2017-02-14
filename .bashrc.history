@@ -19,7 +19,11 @@ export HISTTIMEFORMAT="%F %T "
 mkdir -p ~/.bash_history.per-session
 
 function h () {
-  grep "$@" ~/.bash_history.per-session/*
+  grepcmd=$(which ag)
+  if [[ "$grepcmd" -eq "" ]]; then
+    grepcmd=$(which grep)
+  fi
+  $grepcmd "$@" ~/.bash_history.per-session/*
 }
 
 # Save bash history
