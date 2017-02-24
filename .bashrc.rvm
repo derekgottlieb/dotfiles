@@ -1,11 +1,12 @@
 if [[ -d $HOME/.rvm ]]; then
   # Add RVM to PATH for scripting
   PATH=$HOME/.rvm/bin:$PATH
-  
+
   # Load RVM into a shell session *as a function*
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
   alias be="bundle exec"
+  alias rvminst="rvm install $1 --with-openssl=`brew --prefix openssl`"
 
   # added by travis gem
   [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
