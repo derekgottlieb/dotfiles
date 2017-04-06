@@ -55,6 +55,9 @@
 [merge]
   ff = only
   conflictstyle = diff3
+[merge "ansible-vault"]
+  name = ansible-vault merge driver
+  driver = /usr/local/bin/ansible-vault-merge -- %O %A %B %P
 [mergetool "sourcetree"]
   cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
   trustExitCode = true
@@ -62,6 +65,8 @@
   difftool = true
 [push]
   default = simple
-[merge "ansible-vault"]
-  name = ansible-vault merge driver
-  driver = /usr/local/bin/ansible-vault-merge -- %O %A %B %P
+  followTags = true
+[status]
+  showUntrackedFiles = all
+[transfer]
+  fsckobjects = true
