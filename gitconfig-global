@@ -1,0 +1,67 @@
+[include]
+  path = ~/.gituser
+  # Contains:
+  # [user]
+  #   name = NAME_GOES_HERE
+  #   email = EMAIL_GOES_HERE
+  #   signingKey = KEY_ID_GOES_HERE
+
+[alias]
+  added = difftool --cached
+  amend = commit --amend
+  #branches = branch -a
+  branches = !legit branches
+  create-pull-request = !sh -c 'stash pull-request $0 $@'
+  discard = checkout --
+  glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  graft = !legit graft
+  graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
+  harvest = !legit harvest
+  precommit = diff --cached --diff-algorithm=minimal -w
+  prune = fetch --prune
+  publish = !legit publish
+  resync = !legit resync
+  showtool = "!f() { git difftool $1^ $1; }; f"
+  sprout = !legit sprout
+  stash-all = stash save --include-untracked
+  stashes = stash list
+  switch = !legit switch
+  sync = !legit sync
+  tags = tag
+  uncommit = reset --mixed HEAD~
+  undo = reset --soft HEAD^
+  unpushed = diff origin/$(git name-rev --name-only HEAD)..HEAD --name-status
+  unstage = reset -q HEAD --
+  unpublish = !legit unpublish
+[commit]
+  gpgSign = true
+[core]
+  excludesfile = $HOME/.gitignore_global
+[diff]
+  tool = icdiff
+[diff "ansible-vault"]
+  textconv = ansible-vault view
+  # Do not cache the vault contents
+  cachetextconv = false
+[difftool]
+  prompt = false
+[difftool "icdiff"]
+  cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
+#[difftool "sourcetree"]
+#  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+#  path =
+[gpg]
+  program = gpg2
+[merge]
+  ff = only
+  conflictstyle = diff3
+[mergetool "sourcetree"]
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
+[pager]
+  difftool = true
+[push]
+  default = simple
+[merge "ansible-vault"]
+  name = ansible-vault merge driver
+  driver = /usr/local/bin/ansible-vault-merge -- %O %A %B %P
