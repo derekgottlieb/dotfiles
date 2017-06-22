@@ -37,6 +37,7 @@
   gpgSign = true
 [core]
   excludesfile = $HOME/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [diff]
   tool = icdiff
 [diff "ansible-vault"]
@@ -59,8 +60,8 @@
   name = ansible-vault merge driver
   driver = /usr/local/bin/ansible-vault-merge -- %O %A %B %P
 [mergetool "sourcetree"]
-  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 [pager]
   difftool = true
 [push]
@@ -70,3 +71,6 @@
   showUntrackedFiles = all
 [transfer]
   fsckobjects = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
