@@ -1,0 +1,39 @@
+shuff () {
+	if [ "$(command -v shuf)" ]
+	then
+		shuf -n "$1" --random-source=/dev/urandom
+	elif [ "$(command -v shuffle)" ]
+	then
+		shuffle -f /dev/stdin -p "$1"
+	else
+		awk 'BEGIN{
+            "od -tu4 -N4 -A n /dev/urandom" | getline
+            srand(0+$0)
+        }
+        {print rand()"\t"$0}' | sort -n | cut -f 2 | head -n "$1"
+	fi
+}
+gen_monkey_pass () {
+	i=0 
+	[ $(printf "$1" | grep -E '[0-9]+') ] && num="$1"  || num="1" 
+	until [ "$i" -eq "$num" ]
+	do
+		i=$((i+1)) 
+		LC_ALL=C tr -cd '0-9a-hjkmnp-tv-z' < /dev/urandom | dd bs=1 count=26 2> /dev/null
+		echo
+	done | column
+}
+gen_xkcd_pass () {
+	i=0 
+	[ $(printf "$1" | grep -E '[0-9]+') ] && num="$1"  || num="1" 
+	[ $(uname) = "SunOS" ] && file="/usr/dict/words"  || file="/usr/share/dict/words" 
+	dict=$(LC_ALL=C grep -E '^[a-zA-Z]{3,6}$' "$file") 
+	size=$(printf "$dict" | wc -l | sed -e 's/ //g') 
+	entropy=$(printf "l(${size})/l(2)\n" | bc -l) 
+	words=$(printf "(128+${entropy}-1)/${entropy}\n" | bc) 
+	until [ "$i" -eq "$num" ]
+	do
+		i=$((i+1)) 
+		printf "$dict" | shuff "$words" | paste -s -d '.' /dev/stdin
+	done | column
+}
