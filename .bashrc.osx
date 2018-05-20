@@ -16,6 +16,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
     # git config --file="$(brew --repository)/.git/config" --replace-all homebrew.analyticsdisabled true
 
     [[ -f ~/.brew-growl ]] && source ~/.brew-growl
+    export PATH="$PATH:/usr/local/sbin"
   fi
 
   [[ -f "$HOME/.dotfiles/.iterm2_shell_integration.bash" ]] && source "$HOME/.dotfiles/.iterm2_shell_integration.bash"
