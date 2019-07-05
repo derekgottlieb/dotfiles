@@ -56,6 +56,7 @@ cd ~/.oh-my-zsh && git pull
 # Liquidprompt
 [[ ! -d ~/.liquidprompt ]] && git clone https://github.com/nojhan/liquidprompt.git ~/.liquidprompt
 cd ~/.liquidprompt && git pull
+mkdir -p ~/.config
 ln -fs ~/.dotfiles/liquidpromptrc ~/.config/liquidpromptrc
 
 # Z - jump around to frequently accessed directories easily
