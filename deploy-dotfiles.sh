@@ -39,7 +39,8 @@ FILES_TO_SYMLINK=".bashrc
 .screenrc
 .tm_properties
 .tmux.conf
-.vimrc"
+.vimrc
+.zshrc"
 
 for thisfile in $FILES_TO_SYMLINK
 do
@@ -48,10 +49,15 @@ done
 
 safe_symlink gitconfig-global .gitconfig
 
+# Oh my zsh
+[[ ! -d ~/.oh-my-zsh ]] && git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cd ~/.oh-my-zsh && git pull
+
+# Liquidprompt
 [[ ! -d ~/.liquidprompt ]] && git clone https://github.com/nojhan/liquidprompt.git ~/.liquidprompt
 cd ~/.liquidprompt && git pull
 ln -fs ~/.dotfiles/liquidpromptrc ~/.config/liquidpromptrc
 
+# Z - jump around to frequently accessed directories easily
 [[ ! -d ~/.z.git ]] && git clone https://github.com/rupa/z.git ~/.z.git
 cd ~/.z.git && git pull
-
