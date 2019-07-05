@@ -62,3 +62,7 @@ ln -fs ~/.dotfiles/liquidpromptrc ~/.config/liquidpromptrc
 # Z - jump around to frequently accessed directories easily
 [[ ! -d ~/.z.git ]] && git clone https://github.com/rupa/z.git ~/.z.git
 cd ~/.z.git && git pull
+
+if [[ ! -f ~/.gituser ]] ; then
+  echo "Don't forget to create your .gituser file!"
+fi
