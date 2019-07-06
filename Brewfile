@@ -1,5 +1,9 @@
 # Binaries
 brew "git"
+brew "git-lfs"
+brew "jq"
+brew "mtr"
+brew "syncthing"
 brew "tmux"
 
 # App casks
