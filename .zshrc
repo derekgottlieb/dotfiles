@@ -97,3 +97,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+for p in ~/.dotfiles/.zshrc.*
+do
+  [[ ! $p =~ .*.swp$ ]] && source "$p"
+done
+
