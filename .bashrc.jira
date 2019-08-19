@@ -1,0 +1,9 @@
+#!/bin/bash
+
+JIRACMD=$(which jira)
+if [[ "$?" -ne 0 ]]; then
+  return 0
+fi
+
+eval "$(jira --completion-script-bash)"
+

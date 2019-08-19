@@ -1,0 +1,11 @@
+#!/bin/bash
+
+JIRACMD=$(which jira)
+if [[ "$?" -ne 0 ]]; then
+  return 0
+fi
+
+if [ -z "${ZSH_VERSION-}" ] ; then
+  eval "$(jira --completion-script-zsh)"
+  return 0
+fi
