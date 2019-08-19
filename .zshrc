@@ -103,3 +103,6 @@ do
   [[ ! $p =~ .*.swp$ ]] && source "$p"
 done
 
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+[[ -f ~/.aliases ]] && source ~/.aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local

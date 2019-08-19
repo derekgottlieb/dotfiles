@@ -31,7 +31,8 @@ if [[ ! -d ~/.dotfiles ]]; then
   exit
 fi
 
-FILES_TO_SYMLINK=".bashrc
+FILES_TO_SYMLINK=".aliases
+.bashrc
 .bash_profile
 .profile
 .gitignore_global

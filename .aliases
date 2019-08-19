@@ -1,0 +1,10 @@
+alias be="bundle exec"
+alias dev="cd $HOME/Documents/dev/"
+alias svnc="ssh -L 5950:localhost:5950"
+alias forget="ssh-keygen -f "$HOME/.ssh/known_hosts" -R "
+
+alias sssh="/usr/bin/ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
+alias sscp="/usr/bin/scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
+
+alias redact='git diff $(git merge-base origin/master HEAD) -- group_vars/*/vault.yml | sed -E '"'"'s/: [^ ]*/: [redacted]/; s/ = [^ ]*/: [redacted]/'"'"
+alias uuid='ruby -e "require \'securerandom\'; print SecureRandom.uuid"'
