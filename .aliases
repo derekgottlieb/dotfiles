@@ -8,3 +8,5 @@ alias sscp="/usr/bin/scp -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/nu
 
 alias redact='git diff $(git merge-base origin/master HEAD) -- group_vars/*/vault.yml | sed -E '"'"'s/: [^ ]*/: [redacted]/; s/ = [^ ]*/: [redacted]/'"'"
 alias uuid='ruby -e "require \'securerandom\'; print SecureRandom.uuid"'
+
+alias fb="filebot -rename -non-strict"
