@@ -106,3 +106,6 @@ done
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 [[ -f ~/.aliases ]] && source ~/.aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
