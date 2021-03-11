@@ -7,6 +7,7 @@ brew "syncthing"
 brew "tmux"
 
 # App casks
+cask "alfred"
 cask "appcleaner"
 cask "docker"
 cask "firefox"
