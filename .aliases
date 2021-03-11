@@ -11,3 +11,5 @@ alias redact='git diff $(git merge-base origin/master HEAD) -- group_vars/*/vaul
 #alias uuid='ruby -e "require \'securerandom\'; print SecureRandom.uuid"'
 
 alias fb="filebot -rename -non-strict"
+
+alias gitgrep="git grep --textconv"
