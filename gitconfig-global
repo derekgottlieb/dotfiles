@@ -79,3 +79,8 @@
   driver = npx npm-merge-driver merge %A %O %B %P
 [transfer]
   fsckObjects = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
