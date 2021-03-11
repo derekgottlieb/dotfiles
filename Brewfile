@@ -1,4 +1,5 @@
 # Binaries
+brew "bluetoothconnector" # for alfred airpods-connector
 brew "git"
 brew "git-lfs"
 brew "jq"
