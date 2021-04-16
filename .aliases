@@ -1,5 +1,5 @@
-#alias be="bundle exec"
-alias be="~/.dotfiles/be.rb"
+alias be="bundle exec"
+#alias be="~/.dotfiles/be.rb"
 alias dev="cd $HOME/Documents/dev/"
 alias svnc="ssh -L 5950:localhost:5950"
 alias forget="ssh-keygen -f "$HOME/.ssh/known_hosts" -R "
