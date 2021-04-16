@@ -32,6 +32,7 @@ if [[ ! -d ~/.dotfiles ]]; then
 fi
 
 FILES_TO_SYMLINK=".aliases
+.asdfrc
 .bashrc
 .bash_profile
 .profile
