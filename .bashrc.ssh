@@ -14,7 +14,7 @@ function start_agent {
  chmod 600 "${SSH_ENV}"
  . "${SSH_ENV}" > /dev/null
 
- for key in ${HOME}/.ssh/*_rsa
+ for key in ${HOME}/.ssh/*_ed25519 ${HOME}/.ssh/*_rsa
  do
   /usr/bin/ssh-add $key
  done
