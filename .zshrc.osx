@@ -1,0 +1,17 @@
+if [[ $(uname -s) == "Darwin" ]]; then
+  alias ssh="LANG=en_US.UTF-8 /usr/bin/ssh -Y"
+  alias top="/usr/bin/top -o cpu"
+
+  alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+  alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+  alias plaintextedit='defaults write com.apple.TextEdit RichText -int 0'
+
+  # See https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md#opting-out
+  export HOMEBREW_NO_ANALYTICS=1
+
+  # Homebrew
+  export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
+
+  test -e "${HOME}/.dotfiles/.iterm2_shell_integration.zsh" && source "${HOME}/.dotfiles/.iterm2_shell_integration.zsh"
+fi
+
